@@ -106,6 +106,12 @@ PS：在带 Touch Bar 的机型上，这个设置貌似没有作用。
 
 选择 [System Settings] > [Keyboard] > [Keyboard Shortcuts] > [Input Sources]，取消 [Select the previous input source] 和 [Select next source in input menu]。
 
+在这样设置后，我通常使用`Caps Lock`来切换输入法。但是经过一段时间后我发现，这个切换方法经常失灵，让人恼火。后来我发现可以设置`Function key`切换输入法，而且非常好用。所以我把`Caps Lock`按键映射成`Function key`，在不改变习惯的情况下提升了切换成功率。
+
+首选让`Function key`来切换输入法：选择 [System Settings] > [Keyboard]，选择`Press 🌐 key to`为`Change Input Source`。
+
+然后把`Caps Lock`按键映射成`Function key`：选择 [System Settings] > [Keyboard] > [Keyboard Shortcuts] > [Modifier keys]，选择`Caps Lock key`为`🌐 Globe`。
+
 ### 双拼输入法
 
 从2020年2月，我开始使用双拼输入法，替代使用了多年的全拼输入法。和全拼（也就是最常见的“拼音输入法”）类似，双拼是一种基于拼音的，高效的输入法。它将拼音的声母和韵母分别映射到某个按键上，一个字只需要击键两次，一次声母，一次韵母。和全拼一样，主流的输入法软件都支持双拼。
@@ -748,6 +754,8 @@ brew install --cask intellij-idea
 ```sh
 brew install --cask intellij-idea-ce
 ```
+
+由于[IntelliJ IDEA 迁移到统一发行版](https://blog.jetbrains.com/zh-hans/idea/2025/07/intellij-idea-unified-distribution-plan/)，IDEA将统一 Ultimate 和 Community Edition，名称统一成 IntelliJ IDEA。所以自从2025.2以后，只需要安装 Ultimate Edition 就可以了。如果你没有付费的 License 的话，依然可以使用 Community Edition 对应的功能。
 
 IntelliJ IDEA 有几套内建的快捷键方案（Keymap）。其中我比较常用的有`macOS`和`IntelliJ IDEA Classic`两种。区别是:
 
