@@ -1,407 +1,605 @@
 # Mac Setup Guide for OCD
 
-## How to setup a efficient working environment
+## How to Configure an Efficient Mac Working Environment
 
-*Translated from [强迫症的 Mac 设置指南](https://github.com/macdao/ocds-guide-to-setting-up-mac#强迫症的-mac-设置指南), thanks to author: QiXi from Thoughtworks China - fff*
+[Chinese Version](https://github.com/macdao/ocds-guide-to-setting-up-mac/blob/master/README.md)
+
+The initial version of this document was written in 2015, when I was using a 2013 MacBook Pro with OS X El Capitan 10.11. For nostalgia, you can check the [2015 Version](https://github.com/macdao/ocds-guide-to-setting-up-mac/tree/2015).
+
+Later in 2019, I got a 2019 MacBook Pro with macOS Catalina 10.15. I deliberately did not restore from Time Machine but set it up from scratch. When I followed this guide, I found that many things had changed. The content from that time is in the [2019 Version](https://github.com/macdao/ocds-guide-to-setting-up-mac/tree/2019).
+
+Now in 2024, I have upgraded to an M3 Max MacBook Pro with macOS Sonoma 14, and many new contents have been added this time.
 
 ## Table of Contents
-  * [1. macOS](#1-macos)
-    * [Function Keys](#function-keys)
-    * [Keyboard Only Control](#keyboard-only-control)
-    * [Others](#others)
-    * [Change `click` of Trackpad to `Tap`](#change-`click`-of-trackpad-to-`tap`)
-    * [Voice](#voice)
-    * [Dock Position](#dock-position)
-    * [Change `Caps Lock` to `Control`](#change-`caps-lock`-to-`control`)
-    * [Remove all Dock icons[OCD]](#remove-all-dock-icons[ocd])
-    * [Reset the order of icons on Launchpad[OCD]](#reset-the-order-of-icons-on-launchpad[ocd])
-    * [Keychain Access](#keychain-access)
-    * [Efficient Cursor](#efficient-cursor)
-  * [2. Daily Tools](#2-daily-tools)
-    * [Homebrew](#homebrew)
-    * [Homebrew Cask](#homebrew-cask)
-    * [iTerm2](#iterm2)
-    * [Oh My Zsh](#oh-my-zsh)
-    * [Git Alias](#git-alias)
-    * [ShiftIt](#shiftit)
-    * [Sublime Text 2](#sublime-text-2)
-    * [MarkDown](#markdown)
-    * [z](#z)
-    * [Vimium](#vimium)
-    * [LastPass](#lastpass)
-    * [SourceTree](#sourcetree)
-    * [CheatSheet](#cheatsheet)
-    * [Alfred](#alfred)
-    * [Stow](#stow)
-  * [3. Tools for developers](#3-tools-for-developers)
-    * [Java](#java)
-    * [rbenv](#rbenv)
-    * [Ruby Daily Alias](#ruby-daily-alias)
-    * [Node Version Manager](#node-version-manager)
-  * [References](#references)
 
-I was always thinking about writing this article, to share all the experiences I've learnt from other colleagues. Though there are already some really good books, from which I've learnt a lot also. But I still want to share my own experiences.
+You can open the index by clicking the menu icon in the top-right corner of GitHub.
 
-In projects, I normally work with 1 to 10 people, and pairing a lot by sharing the same laptop, with external display, and extra mouse, keyboard. I'm mostly working with Java, Ruby, Node.js, Web and etc, and using lots of software from [JetBrains](https://www.jetbrains.com/), like IntelliJ IDEA, RubyMine, WebStorm, etc.
+## Why this document
 
-I know my knowledge is so limited, so I want the opinions from you by sharing you this article. Now days, more efficient way and better tools are still keeping comming, I'll keep updating it, to collect the better ways and tools here, it's my greedy wish. For latest version please visit: <https://github.com/macdao/ocds-guide-to-setting-up-mac>. Issues or Pull Requests are welcomed. Looking forward to your feedback.
+I've always wanted to write this article to share the experience I've learned from my colleagues. Although there are already many excellent books from which I've learned a lot, I still want to share my own experience.
 
-Several points of efficient Mac environment in my opinion:
+In projects, I usually work with 1 to 10 people, often pairing by sharing the same laptop with an external display, mouse, and keyboard. I mostly work with Java, Ruby, Node.js, Web, etc., and use a lot of software from [JetBrains](https://www.jetbrains.com/), such as IntelliJ IDEA, RubyMine, WebStorm, etc.
 
-- Automate
+I know my knowledge is limited, so I'm sharing this article to get your opinions. As more efficient methods and better tools keep emerging, I'll keep updating this article to collect the better methods and tools here—it's my greedy wish. For the latest version, please visit: <https://github.com/macdao/ocds-guide-to-setting-up-mac>. Issues or Pull Requests are welcome. Looking forward to your feedback.
 
-  Take a example, there are several steps to install an application manually:
-  1. Open your browser,
-  2. Search by the application name,
-  3. Open the official site for the applicaiton,
-  4. Find the download link,
-  5. Downloading,
-  6. Install it,
-  7. Some post steps.
+In my opinion, an efficient Mac environment has the following characteristics:
 
-  But with automatic tools, you only required to do:
-  1. Open terminal,
-  2. Type in commands,
-  3. Wait to be finished.
+- Automation
 
-  Automate helps to reduce the steps and increase efficiency significantly.
+  For example, manually installing an application requires: 1) opening your browser, 2) searching for the application name, 3) opening the application's official website, 4) finding the download link and installation method, 5) downloading and waiting for the download to complete, 6) installing the downloaded file, 7) possibly some subsequent installation steps. Whereas automating the installation of an application only requires: 1) opening the terminal tool, 2) typing the installation command, 3) waiting for completion.
 
-- Consistence
+  Automation can greatly simplify operations and improve efficiency.
 
-  When I'm pairing, sometimes the shortcuts or commands are different between each other's laptop. I strongly recommend that, at least in the team, try to keep using the same shortcut and commands(I forget the practice name, there have to be one, please let me know if you get it).
+- Consistency
 
-- Just enough
+  I often pair-program and occasionally encounter different shortcuts or commands. I strongly recommend that, at least within a team, everyone tries to use the same shortcuts, commands, and environment. (I remember there's a practice for this, but I haven't found its name and source—please let me know if you do.)
 
-  Enough is perfect. If the system itself provides the function, I won't install any other third party tools.
+  Also, for the sake of consistency, I prioritize default configurations. I only adopt custom configurations when the default ones are significantly worse.
+
+- Sufficiency
+
+  "Good enough" is perfect. If the system itself meets my needs, I won't use third-party tools.
 
 - Efficiency
 
-  Everything is about efficiency.
+  Efficiency—everything is for efficiency.
 
-*For third party applications only simple steps are provided, please go to offial site for detailed installation and instruction documents.*
+*For third-party applications, only the simplest installation and usage instructions are provided; please refer to the official website and related documents for details.*
 
-*Some sections are marked with [OCD], that means it's my personal preference, take it or ignore it, it all depends on if you like it or not.*
+*Some sections are marked with [OCD], indicating they reflect strong personal preferences. If you share similar preferences, feel free to refer to them; if not, please ignore them.*
 
-*[OCD(obsessive-compulsive disorder)](https://www.google.co.za/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CBsQFjAAahUKEwiDve-b7JHJAhUDxxQKHXF2DOE&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FObsessive%25E2%2580%2593compulsive_disorder&usg=AFQjCNGDkJsHHtm6hy60uzEMBn2ee3rSoA&bvm=bv.107467506,d.d24), I didn't mean it, just make fun. Yes, I don't have that disease ;)*
-
-
+*PS: Although this document is titled "OCD," it doesn't refer to [OCD in the clinical sense](https://en.wikipedia.org/wiki/Obsessive%E2%80%93compulsive_disorder). Clinically, OCD is a disorder that negatively impacts a patient's daily life.*
 
 ## 1. macOS
 
-Things related with macOS settings.
+Settings related to the macOS operating system itself.
+
+### Set Trackpad to Tap to Click
+
+By default, you need to physically press the trackpad to click. I prefer to set it to tap to click:
+Select [System Settings] > [Trackpad], check [Tap to click] in the [Point & Click] tab.
+
+### Three-Finger Drag
+
+I'm used to dragging windows with three fingers. Setup: Select [System Settings] > [Accessibility] > [Pointer Control] > [Trackpad Options], check [Use trackpad for dragging], and select [Dragging style] > [Three Finger Drag].
+
+After setting, you can also use three-finger drag to select text.
 
 ### Function Keys
 
-By default, F1-F12 are special function keys, like adjust screen brightness. You are required to press Fn at the same time, when you need input F1-F12(like IntelliJ IDEA shortcuts). It's not so convenient for developers.
+By default, F1-F12 are special function keys, like adjusting screen brightness. When you need to input F1-F12 (e.g., using IntelliJ IDEA shortcuts), you need to press Fn at the same time. This is not convenient for developers.
 
-To avoid pressing Fn: go to `System Preferences` > `Keyboard`，select `Use all F1, F2, etc. keys as standard function keys` in `Keyboard` tab。
+To change F1-F12 to standard function keys: Select [System Settings] > [Keyboard] > [Keyboard Shortcuts] > [Function Keys], check [Use F1, F2, etc. keys as standard function keys].
 
-### Keyboard Only Control
+PS: This setting doesn't seem to work on models with Touch Bar.
 
-You may see this dialog before, when you try to close files in Sublime Text:
+### Full Keyboard Control
+
+When you close files in Code, you might encounter this dialog:
 
 ![dialog-box-without-all-controls](dialog-box-without-all-controls.png)
 
-You may notice that the `Save` button is quite different with the other two, it's BLUE. This kind of blue button is called `default button`, except triggering by clicking, you also can trigger it by `enter`.
+Notice that the [Save] button is different from the other two, it's blue. This kind of button is called a default button, which can be triggered by clicking or by pressing Enter.
 
-What else, how to trigger `Don't Save` without mouse clicking?
-
-Go to `System Preferences` > `Keyboard`, select `All controls` in `Shortcuts` tab or just press `⌃F7`. And the dialog will turn into:
+So, if you don't want to save and want to click [Don't Save], do you have to use the mouse?
+Not necessarily: Select [System Settings] > [Keyboard], check [Keyboard navigation], then the dialog will change to:
 
 ![dialog-box-with-all-controls](dialog-box-with-all-controls.png)
 
-The `Don't Save` button has borders now, so you can trigger it by `space`. And also, you can move the focus(blue borders) to other buttons by press `tab`, you can get rid of your mouse now.
+The [Don't Save] button now has a border, meaning you can trigger it with Space. Also, you can move the focus (blue border) to other buttons with Tab, enabling full keyboard control.
 
-Except the way above, you can also select `Don't Save` by click `⌘⌫`(command+delete). This shortcut means select any button which means 'delete' or 'do not save'.
+Besides the All controls method, you can also use `Command-Delete` to select [Don't Save]. `Command-Delete` means to select any button that means 'delete' or 'do not save'.
 
-Of course, you may click `Esc` to trigger `Cancel`.
+Besides these two methods, there's another way! Press `Command-D`! It's said that pressing `Command-<button's capital first letter>` can trigger the button. But! I tried `Command-C` and `Command-S` to cancel and save, but they didn't work! However, `Command-D` works! If that were all, it would be fine, but I also tried TextEdit, where closing an unsaved file shows a dialog with three buttons: [Delete], [Cancel], and [Save]. Yet `Command-D` and `Command-C` don't work, but `Command-S` can save! I completely don't understand! I'm almost崩溃, so I wrote this in ranting tone. If anyone can explain, please tell me, I'll reward you!
 
-*Some lines are missing here. As not helping a lot - fff*
+`Command-C` probably doesn't work because it's bound to copy function; and `Command-D` doesn't work because its function is to select the Desktop folder in open or save dialogs.
 
-### Others
+On this dialog, you can use `Esc` to perform [Cancel].
 
-Reduce using of Mouse and Trackpad may increase your efficiency.
+### Input Method Shortcuts
 
-- [Mac keyboard shortcts](https://support.apple.com/kb/HT201236)
+I always use the system's built-in Pinyin input method.
 
-  Apple official documents. Like how to move cursor between lines, words and so on.
+Since JetBrains IDEs like IntelliJ IDEA, WebStorm, etc., use `Control-Space` as the shortcut for auto-completion, which is the most commonly used function, this conflicts with the input method switching shortcut. I don't recommend changing the IDE shortcuts, so I suggest changing the input method shortcuts. Since macOS already uses `Caps Lock` to switch input methods by default, which is very convenient, I suggest releasing the `Control-Space` shortcut.
 
-- [Mac keyboard shortcuts for accessibility features](https://support.apple.com/kb/HT204434)
+Select [System Settings] > [Keyboard] > [Keyboard Shortcuts] > [Input Sources], uncheck [Select the previous input source] and [Select next source in input menu].
 
-  Apple official documents. The selection of blue button part is from this.
+Initially, I used `Caps Lock` to switch input methods, but found it sometimes not sensitive enough. Later, I found that setting the `Function key` as the input method switch works better. To maintain habit, I map the `Caps Lock` key to `Function key`, thus improving switch success rate.
 
-### Change `click` of Trackpad to `Tap`
+First, set the `Function key` to switch input methods: Select [System Settings] > [Keyboard], set `Press 🌐 key to` to `Change Input Source`.
 
-By default Trackpad is triggered by click, but you can change it to tap.
+Then map `Caps Lock` to `Function key`: Select [System Settings] > [Keyboard] > [Keyboard Shortcuts] > [Modifier keys], set `Caps Lock key` to `🌐 Globe`.
 
-Goto `System Preferences` > `Trackpad`，check `Tap to click` in `Point & Click` tab.
+### Double Pinyin Input Method
+
+Since February 2020, I started using Double Pinyin input method, replacing the Full Pinyin I used for years. Similar to Full Pinyin (the most common "Pinyin input method"), Double Pinyin is an efficient input method based on Pinyin. It maps the initial and final of Pinyin to specific keys, so each character requires only two keystrokes, one for initial and one for final. Like Full Pinyin, mainstream input method software supports Double Pinyin.
+
+For more information, you can refer to my article [Double Pinyin: An Efficient Pinyin Input Method You Can Master in One Day](https://zhuanlan.zhihu.com/p/106941572).
+
+### Other Shortcuts
+
+Using more keyboard and shortcuts, and less mouse and trackpad, can greatly improve efficiency.
+- [Mac keyboard shortcuts](https://support.apple.com/en-us/HT201236)
+
+  Apple official documentation. When coding, how to move cursor to line start, line end, page up, or move left one word? It's all in this document. I commonly use lock screen for bathroom break: `Control-Command-Q`, switch between windows in current App: ``Command-Grave Accent (`)``.
+- [Keyboard shortcuts in Terminal on Mac](https://support.apple.com/guide/terminal/keyboard-shortcuts-trmlshtcts/mac)
 
 ### Voice
 
-macOS can speak by：
+macOS has built-in speech function, you can use the `say` command to make Mac speak:
 
 ```sh
 say hello
 ```
 
-Combine it with other bash commands using `&&` or `;` like this:
+You can combine it with `&&` or `;` to notify when a task is complete:
 
 ```sh
 brew update && brew upgrade && brew cleanup ; say mission complete
 ```
 
-Also you can let it speak almost anywhere by selecting one word and press `⌥+Esc`(Alt/Option+Esc). Before that you need goto `System Preferences` > `Dictation & Speech`, check `Speak selected text when the key is pressed` in `Text to Speech` tab.
+Listening through command line is a bit cumbersome. Actually, we can almost anywhere select a word and use shortcut `Option-Esc` to speak. Just need to set: Select [System Settings] > [Accessibility] > [Spoken Content], check [Speak selection].
 
-*Some lines are missing here. As not helping a lot - fff*
+### Dictionary
+
+macOS has a built-in Dictionary. You can almost in any application press firmly on the trackpad to see the definition of a word. If you prefer three-finger tap, you can set it in [System Settings] > [Trackpad], in [Point & Click] tab, select [Look up & data detectors] > [Tap with Three Fingers].
+
+You can also open the Dictionary app to look up words.
+
+You can add English-Chinese and Chinese-English dictionaries in the Dictionary app.
 
 ### Dock Position
 
-Dock comes at the bottom of screen as default, but as the resolution is 16:10, we'd better move it to left or right of screen to gain more vertical space.
+By default, Dock is at the bottom of the screen. Our screens are usually 16:10, so Dock at the bottom takes up vertical space that's already limited. Recommended to put Dock on the right or left.
 
-### Change `Caps Lock` to `Control`
+Select [System Settings] > [Desktop & Dock], choose different positions in [Position on screen]. I personally prefer on the right.
 
-I use `Control` a lot, but it's at the left buttom corner, which is quite hard to reach. And I prefer `Shift` to input capitals, or input lower case and transform them with shortcut, so I use `Caps Lock` quite few.
+### Keychain Access
 
-So, I change `Caps Lock` into `Control`. And I found that lots twers are doing the same thing, may be influenced by [HHKB](https://en.wikipedia.org/wiki/Happy_Hacking_Keyboard).
+Keychain Access is a macOS application. For me, its main function is to view saved accounts and passwords, including Wi-Fi passwords.
 
-Howto: goto `System Preferences` > `Keyboard`, click `Modifier Keys...` in `Keyboard` tab, in the popup window change the option `Caps Lock (⇪) Key:` to `⌃ Control`.
+PS: Now you can view Wi-Fi passwords in [System Settings] > [Wi-Fi] > [Advanced], and view saved website passwords in [System Settings] > [Passwords].
 
-### Remove all Dock icons[OCD]
+### Efficient Cursor
 
-*本条目对于强迫症适用。It's for OCD(obsessive-compulsive disorder)*
+By default, the cursor blink and move speed is quite slow. When you need to delete large paragraphs with backspace, it's painful because even holding backspace, the cursor moves slowly.
 
-There are several icons on the Dock by default, I rarely use most of them. And after opening several daily applications, the Dock comes so noisy, and the icons turn to really small. So I remove all the static icons on the Dock, to make space for runing applications.
+Adjust cursor speed: Select [System Settings] > [Keyboard], move the [Key repeat rate] and [Delay until repeat] sliders to the rightmost, to speed up continuous input and initial repeat, enjoy flying speed now.
 
-*Finder cannot be removed.*
+### Safari Open All Windows from Last Session
 
-This command can easily hide all static Dock icons instead of removing them one by one:
+I often open multiple windows in the browser. If accidentally closed (e.g., browser update), the windows are lost, which affects work. You can set the browser to automatically open all windows from the last session. Select Safari's [Settings] > [General] > [Safari opens with] > [All windows from last session].
 
-```sh
-defaults write com.apple.dock static-only -boolean true; killall Dock
-```
+### Check Charging Power
 
-It's easy to recovery:
+If you want to know the current charging power, you can use this command:
 
 ```sh
-defaults delete com.apple.dock static-only; killall Dock
+system_profiler SPPowerDataType | grep Wattage -C 5
 ```
 
-*The `Downloads`Folder on the Dock will be hidden too*
+You can see content like:
 
+```
+    AC Charger Information:
 
-### Reset the order of icons on Launchpad[OCD]
+      Connected: Yes
+      ID: 0x0000
+      Wattage (W): 60
+      Family: 0xe000400a
+      Charging: No
+```
 
-*本条目对于强迫症适用。It's for OCD(obsessive-compulsive disorder)*
+### Activity Monitor
+
+Activity Monitor's default Dock icon is static. You can set it to show CPU curve to real-time monitor machine load.
+
+Right-click (two-finger click) on Activity Monitor icon in Dock, select [Dock Icon] > [Show CPU History].
+
+### Show Date on Menu Bar
+
+I like to show the date on the menu bar, so I can easily see the current date. Now it's default, no need for additional setup. The setting is in [System Settings] > [Control Center] > [Clock Options].
+
+### Spotlight Shortcuts
+
+Spotlight's shortcut (whether English or Chinese version) has been unified to `Command-Space`, no modification suggestion here.
+
+### Create Case-Sensitive Workspace
+
+> unverified
+
+In multi-person project development, because Mac file system is case-insensitive by default, there are often weird issues. Create a case-sensitive workspace to avoid these problems:
+
+```sh
+hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100g -volname workspace ~/Documents/workspace.dmg.sparseimage
+```
+
+You can mount the image in three ways:
+
+- Double-click to open `~/Documents/workspace.dmg.sparseimage`
+- `open ~/Documents/workspace.dmg.sparseimage`
+- `hdiutil attach ~/Documents/workspace.dmg.sparseimage`
+
+### Remove all Dock icons [OCD]
+
+By default, Dock is occupied by a bunch of system apps, most of which I rarely use. When I open several frequently used apps, there are many icons on Dock, each becomes very small. So I delete all static icons on Dock, so only open apps are on Dock.
+
+PS: Finder icon cannot be removed.
+
+Besides deleting one by one, you can use this command to hide all static icons:
+
+```sh
+defaults write com.apple.dock static-only -bool true; killall Dock
+```
+
+PS: The `Downloads` folder on Dock will also be hidden.
+
+How to recover (the method of only changing `static-only` doesn't work anymore):
+
+```sh
+defaults delete com.apple.dock; killall Dock
+```
+
+PS: This method will reset all Dock configurations, including Dock Position.
+
+### Reset Launchpad Icon Order [OCD]
+
+After new apps are installed, they often go to the first screen of Launchpad, so their position depends on installation order. I prefer them to be in a more stable order, like the system default order:
 
 ```sh
 defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 ```
 
-### Keychain Access
+In the default order, only Apple's own apps are on the first screen of Launchpad.
 
-Keychain Access is a macOS application. It can be used to find saved accounts and passwords including Wi-Fi password.
+After I updated to macOS 15.2, the above command became invalid. I [found](https://forums.macrumors.com/threads/macos-15-2-launchpad-default-layout.2445232/) this command:
 
-*Some lines are missing here. As not helping a lot - fff*
+```sh
+find 2>/dev/null /private/var/folders/ -type d -name com.apple.dock.launchpad -exec rm -rf {} +; killall Dock
+```
 
-### Efficient Cursor
+This command finds folders named `com.apple.dock.launchpad` in `/private/var/folders/` and deletes them.
 
-By default, cursor has pretty slow blinking and moving speed. When you need delete a large paragraphs of text by pressing the backspace, you are probably wasting your time. Even you hold the backspace key hardly, the cursor is still as slow as a snail.
+## 2. Common Tools
 
-Speed up cursor: Go to `System Preferences` > `Keyboard`, move `Key Repeat` and `Delay Until Repeat` slidebars to rightmost under `Keyboard` tab. Enjoy your speed now!
-
-## 2. Daily Tools
-
-Some routine software, and not necessarily related to development.
+This section introduces some commonly used third-party applications and their settings, which may not be directly related to development.
 
 ### [Homebrew](http://brew.sh)
 
-Package management, official description: "The missing package manager for macOS".
+Package management tool, officially called "The missing package manager for macOS".
 
-Go to official site for installation steps.
-
-After installation, you only need to run command below to install mysql, gradle, maven, node：
+Official installation command:
 
 ```sh
-brew install mysql gradle maven node
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-PS: install brew will download and install Apple Command Line Tools automatically.
+PS: Installing Homebrew will automatically download and install Apple's Command Line Tools.
 
-*Some lines are missing here. As not helping a lot - fff*
+After installation, Homebrew suggests adding this line to `~/.zprofile`: `eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"`. If you use [Oh My Zsh](#oh-my-zsh), you can use the `brew` plugin instead. Edit `~/.zshrc`, add `brew` in the `plugins=(git)` parentheses, e.g., `plugins=(git brew)`.
 
-### [Homebrew Cask](https://caskroom.github.io/)
-
-brew-cask helps you to install macOS Applications. Like to install Chrome：`brew cask install google-chrome`. Also Evernote, Skype, Sublime Text, VirtualBox, Java7 ...
-
-brew-cask is driven by community, you may raise a pull request when you found any missing or outdated application.
-
-You can find the installation method on offical website.
-
-You would like to search if you not sure if some application is already in cask.
+With Homebrew, to download tools like Wget, Gradle, Maven, etc., you don't need to download them separately from the web, just one command:
 
 ```sh
-brew search java
+brew install wget gradle maven
 ```
 
-*Some lines are missing here. As not helping a lot - fff*
+Executing `install` commands often involves updates, which can be slow. You can disable auto-update by setting the environment variable `HOMEBREW_NO_AUTO_UPDATE`:
 
-### [iTerm2](https://www.iterm2.com/)
+```sh
+echo export HOMEBREW_NO_AUTO_UPDATE=1 >> ~/.zprofile
+```
 
-iTerm2 is the most widely used terminal tool, considered as the replacement of Terminal. It provides [a group of practical features](https://www.iterm2.com/features.html), including `Split Panes`. Its default black background makes me throw away macOS' inbuilt Terminal application without any hesitation.
+Want to know what tools other people in the world like to use? Check the [download rankings here](https://formulae.brew.sh/analytics/) to see which applications and tools are the most popular.
+
+Alternatives to Homebrew include [MacPorts](https://www.macports.org/), which I haven't used.
+
+#### Install Homebrew Using China Mirror
+
+Sometimes accessing GitHub from within China is very slow, causing Homebrew installation to fail. I previously provided a [method](https://github.com/macdao/ocds-guide-to-setting-up-mac/tree/2019#%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85-homebrew), but now Homebrew supports [installation using domestic sources](https://docs.brew.sh/Installation#git-remote-mirroring).
+
+```sh
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+/bin/bash -c "$(curl -fsSL https://mirrors.ustc.edu.cn/misc/brew-install.sh)"
+```
+
+The `HOMEBREW_BOTTLE_DOMAIN` setting allows the `ruby` download during installation to use the mirror. Refer to [Homebrew Source Usage Help](https://mirrors.ustc.edu.cn/help/brew.git.html).
+
+Then, to make the mirror persist, add the following to your `~/.zprofile` file:
+
+```sh
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
+```
+
+The `HOMEBREW_API_DOMAIN` sets the package installation information address to the mirror address. For details, refer to [brew(1)](https://docs.brew.sh/Manpage), [4.0.0](https://brew.sh/2023/02/16/homebrew-4.0.0/).
+
+### [Homebrew Cask](https://github.com/Homebrew/homebrew-cask)
+
+Homebrew Cask allows you to install macOS applications using the command line. For example, you can install Chrome: `brew install --cask google-chrome`. Also Evernote `evenote`, Sublime Text `sublime-text`, VirtualBox `virtualbox`, Docker `docker`, Firefox `firefox`, Visual Studio Code `visual-studio-code`, etc., can be installed with Homebrew Cask.
+
+Homebrew Cask is community-driven. If you find that an application on Homebrew Cask is not the latest version or missing an application you need, you can submit a pull request.
+
+Currently, Homebrew Cask is deeply integrated with Homebrew and does not need to be installed separately.
+
+Applications can also be installed via the App Store, and some applications can only be installed through the App Store, such as Xcode and other Apple applications. The App Store does not have a corresponding command-line tool and requires an Apple ID, which is somewhat inconvenient, but updates are very convenient.
+
+Almost all commonly used applications can be installed via Homebrew Cask, and they are usually downloaded from official sources. Therefore, it is recommended to prioritize Homebrew Cask when installing new applications. If you are unsure of the application ID, you can use the `brew search` command to search.
+
+#### Install Homebrew Cask Using China Mirror
+
+According to the method described above in [Install Homebrew Using Domestic Mirror](#install-homebrew-using-domestic-mirror), after setting up, Cask can also use the mirror.
+
+### [iTerm2](https://iterm2.com/)
+
+iTerm2 is the most commonly used terminal application, a replacement for the Terminal application. It provides [a set of practical features](https://iterm2.com/features.html) including `Split Panes`. Its default black background makes me abandon the built-in Terminal without hesitation.
 
 Installation:
 
 ```sh
-brew cask install iterm2
+brew install --cask iterm2
 ```
 
-Thanks to brew-cask ~
+Thanks to Homebrew Cask, we can automatically install iTerm2 via command line.
 
-In iTerm2, except the commond shortcuts like `^E`(ctrl+E)(find more [here](#Others)). And after some configuration you can have more shortcuts like `⌥B`(alt+B), `⌥F`(alt+F).
-HowTo: go to `Preferences` > `Profiles` > `Keys`, change the option of `Left option (⌥) key acts as` and `Right option (⌥) key acts as` to `+ESC`.
+At this point, the Terminal application has completed its mission, and subsequent command-line operations will be handled by iTerm2.
 
-When you open new window/tab, by default you're at user home directory, and need input commands to go somewhere else. If you want to open new window/tab in previous directory, you can set it like this:
-`Preferences` > `Profiles`, and select your profile('Default' for most of time), go to `General` tab, check `Reuse previous seesion's directory` for `Working Directory`.
+In the terminal, besides using shortcuts like `Control-E` (see [Other Shortcuts](#other-shortcuts)), you can also use shortcuts like `Option-B`, `Option-F` (for details, refer to [here](http://ss64.com/bash/syntax-keyboard.html)). The prerequisite is to set it up like this:
 
-If you want to save all the current windows/tabs layout, press `⌘⇧S`(command+shift+S) to save the window arrangement. Also you can find this item in the `Window` menu on the top.(*added by fff*)
+Select [Settings] > [Profiles], select the Profile you are using (default is `Default`), in the [Keys] tab, set both [Left Option key:] and [Right Option key:] to [Esc+].
 
-Till now, Terminal should be given up, and turn to use iTerm2.
+When opening new windows/tabs, by default you enter the `$HOME` directory and need to manually switch to the working directory. If you want new windows to automatically enter the working directory, you can set it up as follows:
 
-And in iTerm2, double click will select the according word, triple click will select the current line. Also the selected content will be in your clip-board, no addition `⌘C`(command+C) is required.
+Select [Settings] > [Profiles], select the Profile you are using (default is Default), in the [General] tab, select [Working Directory] > [Reuse previous session's directory].
+
+In iTerm2, double-clicking will automatically select the corresponding word, triple-clicking will select the entire line. The selected content will automatically enter the clipboard, no need to press `Command-C` to copy.
+
+I often use iTerm2's built-in password manager to manage some passwords used in the terminal. Open it in iTerm2's [Window] > [Password Manager] (or shortcut `Command-Option-F`).
+
+Timestamps feature can display the time of each line output in the terminal. One-time use: [View] > [Show Timestamps], default use: [Settings] > [Profiles] > [Session] > [Show timestamps] -> [Always].
 
 ### [Oh My Zsh](http://ohmyz.sh)
 
-By default Bash is only white and black, there is no more colors there. And On-My-Zsh brings the colorful world to you. Oh-My-Zsh also brings you a set of plugins and tools, which is quite handy for simplify commands input. In the below you will find that I love it to death.
+By default, Bash (Catalina already uses Zsh by default) is black and white, without colors. Oh My Zsh can bring you into the colorful era. Oh My Zsh also provides a set of plugins and tools that can simplify command-line operations. Later we will see many introductions, and you'll see I love this guy to death.
 
-Go to official site for installation steps.
-
-Plugins I'm using: `git z sublime history rbenv bundler rake`
-
-Oh-My-Zsh uses Z shell（zsh）, which is quite close to Bash, but it's not Bash.
-
-In Z shell, `~/.zshrc` is the most important configure file. Oh-My-Zsh will set the current path into `~/.zshrc` as `$PATH` during installation. As I'm using brew, this is not something that I want to have. With brew, we are not encouraged to customize `$PAHT`, and by default Oh-My-Zsh already set `$PAHT` with quite good value:`$HOME/bin:/usr/local/bin:$PATH`, in which contains the `$HOME/bin`, it means we can put customized scripts in `$HOME/bin`.
-
-so I recommend you to reset the `~/.zshrc`:
+Official installation command:
 
 ```sh
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-> [Since a commit on Jun 17 2016](https://github.com/robbyrussell/oh-my-zsh/commit/551abfcbb48a0c001eadef80abc3276af4e9ad26), the `zshrc.zsh-template` didn't change `$PATH` any more. Find `# export PATH=$HOME/bin:/usr/local/bin:$PATH` and remove the `#` to make our life better。
+For domestic users, you can use [the following method](https://github.com/ohmyzsh/ohmyzsh/wiki#welcome-to-oh-my-zsh):
 
-Oh-My-Zsh gets [more valuable plugins](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview).
+```sh
+sh -c "$(curl -fsSL https://install.ohmyz.sh)"
+```
 
-Besides Oh-My-Zsh, there is [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)，which based on [Fishshell](http://fishshell.com/).
+Currently, I use the following plugins: `git z history brew asdf`
 
-### Git Alias
+Oh My Zsh uses Z shell (Zsh), a shell similar to Bash, but not Bash.
 
-Almost everyone is looking for ways to increase their efficiency, like git alias, using `git st` instead of `git status`. But it requires some manual configuration, which makes everyone's configuration differ.
+Oh My Zsh has many [valuable plugins](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview).
 
-Oh-My-Zsh provides a set of system aliases to achieve the same purpose. For example: take `gst` as the alias of `git status`. Also the git plugin of Oh-My-Zsh is enabled by default, which means if you're using Oh-My-Zsh, you are having a set of efficient aliases, which is been commonly used globally, isn't that wonderful?!
+Alternatives include [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) based on [fish shell](https://fishshell.com/), and [Oh My Bash](https://github.com/ohmybash/oh-my-bash) based on Bash.
 
-Some of my frequently used aliases are:
+### Command Completion
+
+Z shell supports command completion, and Oh My Zsh enables it by default. Now when you type `curl -` in the terminal and press the `Tab` key, you can see various candidate parameters:
+
+```
+--data         -d  -- HTTP POST data
+--fail         -f  -- Fail fast with no output on HTTP errors
+...
+```
+
+Press the `Tab` key again and you can also select parameters using the arrow keys.
+
+When we view tool information through Homebrew, for example `brew info colima`:
+
+```
+==> Caveats
+zsh completions have been installed to:
+  /usr/local/share/zsh/site-functions
+...
+```
+
+This indicates that the tool comes with command completion configuration, which can be used directly after installation through Homebrew. For example, typing `colima ` in the terminal and pressing the `Tab` key will show various candidate parameters:
+
+```
+completion  -- Generate completion script
+delete      -- delete and teardown Colima
+...
+```
+
+However, if you are using an Apple silicon computer, this is not enough. Please refer to [brew Shell Completion](https://docs.brew.sh/Shell-Completion). In short, Z shell enables command completion through the `compinit` command, which will traverse the directories in the `$fpath` variable and load the command completion configurations within them. For Intel computers, Homebrew will install command completion configurations to the `/usr/local/share/zsh/site-functions` directory, which is also the default `$fpath` for Z shell. But for Apple silicon computers, Homebrew's directory becomes `/opt/homebrew/share/zsh/site-functions`, so we need to configure it ourselves by adding the following content to the `~/.zprofile` file:
+
+```sh
+FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
+```
+
+Many articles recommend [zsh-completions](https://github.com/zsh-users/zsh-completions), but it is not an essential component for command completion. This repository contains common command completion configurations not included with Homebrew (such as `mvn`, `yarn`), which you can install yourself if needed.
+
+### Git Common Aliases
+
+To improve efficiency, many people use Git aliases, such as using `git st` instead of `git status`. However, this usually requires manual setup, and each person's configuration varies.
+
+Oh My Zsh provides a set of system aliases to achieve the same functionality, for example, `gst` is an alias for `git status`. The Git plugin is enabled by default, meaning that using Oh My Zsh gives you a set of efficient and universally common aliases. Here are some of my commonly used aliases:
 
 Alias | Command
 ----- | -------
 gapa  | `git add --patch`
-gc!   | `git commit -v --amend`
-gcl   | `git clone --recursive`
-gclean| `git reset --hard && git clean -dfx`
-gcm   | `git checkout master`
-gcmsg | `git commit -m`
+gc!   | `git commit --verbose --amend`
+gcl   | `git clone --recurse-submodules`
+gclean| `git clean --interactive -d`
+gcm   | `git checkout $(git_main_branch)`
+gcmsg | `git commit --message`
 gco   | `git checkout`
 gd    | `git diff`
 gdca  | `git diff --cached`
-glola | `git log --graph --pretty = format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all`
+glola | `git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset" --all`
 gp    | `git push`
 grbc  | `git rebase --continue`
 gst   | `git status`
-gup   | `git pull --rebase`
-gwip  | `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "--wip--"`
+gpr   | `git pull --rebase`
+gwip  | `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]"`
 
-The full list is here: <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git>, or simply run command `alias | grep git` in Oh-My-Zsh window.
-
-*Some lines are missing here. As not helping a lot - fff*
+The full list is available at: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git/>.
 
 ### ShiftIt
 
-In macOS you only can adjust window size by dragging. I've tried lots of window management tools, but most of them have the conflict key mapping(mostly with IntelliJ IDEA). ShiftIt is the apparently rare one without any conflicts.
+> This tool stopped working after a macOS 12 update. According to [the author's suggestion](https://github.com/fikovnik/ShiftIt#alternatives), I switched to [Hammerspoon ShiftIt](#hammerspoon-shiftit).
 
-Installation:
-
-```sh
-brew cask install shiftit
-```
-
-SizeUp is one replacer，share the same main shortcuts with ShiftIt.
-
-Divvy is another replacer, need to purchase through appstore.(*added by fff*)
-
-For hackers: [Slate](https://github.com/jigish/slate), configuration reference: <http://thume.ca/howto/2012/11/19/using-slate/>
-
-### Sublime Text 2
-
-Installation:
+Native macOS only supports manually resizing windows, so a window management tool is needed. I've tried many tools, but most conflict with existing shortcuts (especially IntelliJ IDEA). ShiftIt is one of the few window management tools without conflicts:
 
 ```sh
-brew cask install sublime-text
+brew install --cask shiftit
 ```
 
-Open file with Sublime Text in command line is quite handy, normally we need to link it first(following:[OS X Command Line](https://www.sublimetext.com/docs/2/osx_command_line.html)) with: `ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl`.
+An alternative is SizeUp, which shares the same main shortcuts as ShiftIt.
 
-But if you install it with brew-cask, the problem is already sorted by brew-cask, and it will remove the link when you uninstall Sublime Text.
+Of course, if you like hacking, [Slate](https://github.com/jigish/slate) is a good hackable window management tool. Configuration reference: <http://thume.ca/howto/2012/11/19/using-slate/>.
 
-At the same time, Oh-My-Zsh also provides the plugin for Sublime Text: `sublime`(<https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sublime>), which is perfectly compliant with brew installed Sublime Text.
+Recently, I researched [Rectangle](https://rectangleapp.com/), which ranks high on the Homebrew leaderboard, and found that its default shortcuts conflict with [IntelliJ IDEA](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf).
 
-Replacers: Atom, TextMate, Sublime Text 3 etc. For all of them, brew-cask will manage the links for you.
+### [Hammerspoon ShiftIt](https://github.com/peterklijn/hammerspoon-shiftit)
 
-### [MarkDown](https://daringfireball.net/projects/markdown/)
+A method based on [Hammerspoon](https://www.hammerspoon.org/) that simulates Shiftit window management functionality. The installation steps are slightly cumbersome. See the title link for installation instructions.
 
-MacDown is a Markdown editor. As Mou doesn't support code highlighting, I switched to MacDown, which supports [GFM](https://help.github.com/articles/github-flavored-markdown/) perfectly.
+If the `ShiftIt spoon` in [Step 2](https://github.com/peterklijn/hammerspoon-shiftit?tab=readme-ov-file#step-2) cannot be downloaded, you can use this [link](https://github.com/peterklijn/hammerspoon-shiftit/releases/download/v1.1/ShiftIt.spoon.zip), the file is exactly the same.
 
-I like Markdown a lot, and I write articles(include this one) with Markdown, also for slides([reveal.js](https://github.com/hakimel/reveal.js/)). Markdown makes me focus on the content itself, and won't waste me too much time on the styles and layouts.
+### z
 
-Installation:
+After opening a new terminal, how do you quickly get to your project working directory? Besides `cd xxx`, `Control-R`, or using aliases, there is a more convenient way.
 
-```sh
-brew cask install macdown
-```
+The [z](https://github.com/rupa/z) tool can help you quickly navigate to directories. For example, running `z cask` on my Mac will take me to `/usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask`.
 
-### [z](https://github.com/rupa/z)
+This tool is easy to install and requires no additional downloads because it is already integrated into Oh My Zsh. Simply edit the `~/.zshrc` file, add `z` to the `plugins=(git)` line (e.g., `plugins=(git z)`), and then run `source ~/.zshrc` to reload the configuration file to start using it.
 
-After opening new terminal, how do you get to the working directory? `cd xxx` or `^R`(ctrl+R, bash reverse search), or alias?
-
-z helps you get the target directory easily. Like running `z cask` in my terminal, it will lead me to `/usr/local/Library/Taps/caskroom/homebrew-cask/Casks`.
-
-It's quite easy to install, nothing is required to be downloaded, as it's already in Oh-My-Zsh. Open `~/.zshrc`, find plugins configuration line like this:`plugins=(git)`, and put `z` inside the parentheses like:`plugins=(git z)`, then re-initial terminal by `source ~/.zshrc`, it's there now.
-
-Autojump is a replacer, which requires to be installed by brew.
+Alternatives include autojump. autojump needs to be installed using Homebrew.
 
 ### [Vimium](https://vimium.github.io/)
 
-Vimium is a Google Chrome extension, which turns your chrome into a "hackers's browser", you can operate your Chrome via keyboard.
+Vimium is a browser extension that supports pure keyboard operation, significantly improving browser efficiency.
 
-For installation please go to Chrome Extension Market.
+Installation methods can be found on the official website. Supports Chrome, Edge, Firefox.
 
-For firefox there is a similar solution: [KeySnail](https://github.com/mooz/keysnail).
+### Installing Fonts
+
+I often use some open-source fonts, such as `Open Sans`. Previously, I would search and download fonts from the web, then used [SkyFonts](https://www.monotype.com/products/skyfonts) to install fonts, until I discovered [homebrew-cask-fonts](https://github.com/Homebrew/homebrew-cask-fonts):
+
+```sh
+brew tap homebrew/cask-fonts
+brew install font-open-sans
+```
+
+### [BCLM](https://github.com/zackelia/bclm)
+
+I saw a study that said compared to "discharging to 25% then charging to 100%", "discharging to 45% then charging to 75%" will give the battery a longer lifespan (health).
+
+Therefore, to avoid charging above 75%, I use the tool [bclm](https://github.com/zackelia/bclm) to limit the charging limit to any integer between 50 and 100. For Apple silicon computers, it can be set to 80 or 100.
+
+```sh
+brew tap zackelia/formulae
+brew install bclm
+```
+
+Reference: [Battery health dropped to 90% in a few months? This charging method extends battery life by 3 times (not clickbait)](https://www.bilibili.com/video/BV1Ha411F7rg/?share_source=copy_web).
+
+Recently, after my M3 Max MacBook Pro upgraded to the latest version of macOS (14.7), BCLM [stopped working](https://github.com/zackelia/bclm/issues/49). I am now trying to use [batt](https://github.com/charlie0129/batt) as a replacement. `batt` can also be installed using Homebrew. Note that after installation, you need to use `sudo brew services start batt` to start the service.
+
+### [AlDente](https://apphousekitchen.com/)
+
+AlDente can be seen as an enhanced version of BCLM. It installs a Helper that maintains the battery level between 20-100, which is more powerful than BCLM.
+
+After using it for a while, I found that AlDente occupies my Menu Bar, making the Menu Bar space on my notch MacBook Pro even more cramped. I still prefer command line and open source, so I am recently trying `batt`.
+
+### [totp-cli](https://github.com/yitsushi/totp-cli)
+
+I often need to enter some 2FA verification codes, which requires opening a mobile app to copy a 6-digit number. If I can complete this directly on my laptop, it would be much more convenient.
+
+`totp-cli` is a TOTP tool that runs on the computer and can generate verification codes via the command line. In addition, it can encrypt and save keys, manage multiple sets of keys, and import/export. Previously, I used `oathtool`, managed keys myself (I put them in Keychain), and had to write scripts. Now I have switched to `totp-cli`.
+
+```sh
+brew install totp-cli
+```
+
+### Visual Studio Code
+
+I now use Visual Studio Code more often. Visual Studio Code also has Homebrew Cask automatically create the `code` link, and also has Oh My Zsh plugin support.
+
+```sh
+brew install --cask visual-studio-code
+```
+
+### Sublime Text 3
+
+> unverified
+
+Installation:
+
+```sh
+brew install --cask sublime-text
+```
+
+Opening files with Sublime Text from the command line is a very common feature. Generally, we would follow [OS X Command Line](https://www.sublimetext.com/docs/3/osx_command_line.html) and run `ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl` to add the `subl` link. However, if you install it with Homebrew Cask, congratulations, you don't need to run this command because Homebrew Cask automatically does this for you. Moreover, when you uninstall Sublime Text, Homebrew Cask will automatically remove this link.
+
+At the same time, Oh My Zsh also provides a Sublime Text plugin called `sublime`. Reference: <https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins#sublime>, this plugin is perfectly compatible with Sublime Text installed via Homebrew Cask.
+
+Alternatives include Atom, TextMate, Sublime Text 2, etc. Like Sublime Text 3, if installed with Homebrew Cask, the command-line tool will be automatically added to `$PATH`.
+
+### MacDown
+
+MacDown is a Markdown editor. Since Mou never supported code highlighting, I switched to MacDown. It perfectly supports [GFM](https://help.github.com/articles/github-flavored-markdown/).
+
+I really like [Markdown](https://daringfireball.net/projects/markdown/), I use Markdown to write articles (including this one), and to create slides ([reveal.js](https://github.com/hakimel/reveal.js/)). Markdown allows me to focus on the content itself without spending effort on layout and styling.
+
+Installation:
+
+```sh
+brew install --cask macdown
+```
+
+Homebrew Cask will also add the `macdown` command, making it convenient to open files with MacDown from the command line.
+
+### Scroll Reverser
+
+> unverified
+
+When you are browsing a long web page and have finished viewing the currently displayed content, you want to see the subsequent content. You can swipe up with two fingers on the Trackpad or scroll the mouse wheel upwards. This is called the "natural" scrolling direction.
+
+However, in Windows, the mouse scrolling behavior is the opposite: scrolling the mouse wheel down will make the browser display subsequent content, and scrolling up will reach the top of the page. You can modify this in the macOS system preferences (select [System Settings] > [Trackpad], uncheck [Natural scrolling] in the [Scroll & Zoom] tab), but this will also change the Trackpad direction.
+
+To change only the mouse wheel direction while keeping the Trackpad "natural," we need Scroll Reverser:
+
+```sh
+brew install --cask scroll-reverser
+```
+
+PS: This will disable three-finger click.
 
 ### [LastPass](https://lastpass.com)
 
-LastPass is a password management tool, support a second login step, provides plugins for every browser and also macOS desktop version.
+> unverified
 
-The most important thing, it provides **command line** version, install it by:
+LastPass is a password management tool that supports two-factor authentication and provides plugins for all browsers as well as a macOS desktop version.
+
+Most importantly, it provides a **command-line** version that can be installed directly via Homebrew:
 
 ```sh
 brew install lastpass-cli --with-pinentry
 ```
 
-then, login into your account:
+After that, simply log in with the command:
 
 ```sh
 lpass login you@email.com
 ```
 
-So you can copy password or integrate into other commands:
+You can then copy passwords or integrate them into other commands:
 
 ```sh
 lpass show --password gmail.com -c
@@ -409,102 +607,187 @@ lpass show --password gmail.com -c
 
 ### [SourceTree](https://www.sourcetreeapp.com/)
 
-SourceTree is an outstanding git GUI client by Atlassian. You may try if you want more than command line.
+> unverified
+
+SourceTree is an excellent Git GUI client from Atlassian. You can try it if you need more than the command line.
 
 Installation:
 
 ```sh
-brew cask install sourcetree
+brew install --cask sourcetree
 ```
 
-Brew-cast will add `stree` to `$PATH` when installing it. Run `stree` from terminal will invoke SourceTree open the Git repository under current path. for more: `stree --help`.
+Homebrew Cask will automatically add the `stree` command-line tool to `$PATH` when installing. Entering `stree` in the command line will quickly open the current Git repository with SourceTree. For detailed usage, see `stree --help`.
 
 ### [CheatSheet](http://www.mediaatelier.com/CheatSheet/)
 
-CheatSheet will show a list of all active short cuts of the current application. Just hold the `⌘` for a bit longer.
+> unverified
 
-![CheatSheet](http://www.mediaatelier.com/CheatSheet/imgs/main.png)
+CheatSheet can display a list of shortcuts for the current application. The default shortcut is to long-press `Command`.
 
 Installation:
 
 ```sh
-brew cask install cheatsheet
+brew install --cask cheatsheet
 ```
 
 ### [Alfred](https://www.alfredapp.com)
 
-The must have tool for Mac user, comes together with a bunch of workflows, which will extremely save your operating time.
+> unverified
 
-Easy to start, but takes more time to setup your self-defined workflows, but anyway there are already lots of workflows shared by nice people, visit [here](http://www.alfredworkflow.com/), choose what you like, and modify it in your way.
+Alfred is an essential tool for Mac users. Combined with numerous Workflows, it can significantly reduce operation time after getting used to it.
 
 Installation:
 
 ```sh
-brew cask install alfred
+brew install --cask alfred
 ```
 
 ### [Stow](http://www.gnu.org/software/stow/)
 
-GNU stow is the super girl(-.-) of symlink management. Mainly it's used to symlink your [dotfiles](http://dotfiles.github.io/), like Emacs，Git configuration files of fish shell/Zsh.
+> unverified
 
-Installation:
+GNU Stow is a "princess" for managing symbolic links (symlinks). It is mainly used to symlink your [dotfiles](http://dotfiles.github.io/), such as Emacs, Git, fish shell/Zsh configuration files. Installation is simple:
 
-```
+```sh
 brew install stow
 ```
 
-After installing, we can symlink the dotfiles. The full instructions for stow and dotfiles are here:<https://github.com/jcouyang/dotfiles>.
+After installing Stow, we can start symlinking some dotfiles. The complete process for using Stow and dotfiles can be found at <https://github.com/jcouyang/dotfiles>.
 
-After symlinking all your dotfiles to `~/dotfiles`, push it to github. There is no worries any more for setuping another new laptop.
+Once your dotfiles are properly symlinked to `~/dotfiles`, push them to GitHub, and you'll never have to worry about setting up another new laptop.
 
-## 3. Tools for developers
+## 3. Developer Tools
+
+### [asdf-vm](https://asdf-vm.com)
+
+asdf-vm is a command-line tool that allows you to install multiple versions of development tools simultaneously, switch between versions at any time, and configure different versions based on global, directory, and current shell session. It supports development tools in the form of plugins, currently supporting nearly 200 tools including .NET Core, Clojure, Deno, Groovy, Java, Kotlin, Maven, MySQL, Node.js, PHP, Python, Ruby, Scala, Yarn, etc. See the [plugin list](https://github.com/asdf-vm/asdf-plugins) for details. With asdf-vm, you no longer need to install separate tools like `gvm`, `nvm`, `rbenv`, and `pyenv`.
+
+I currently use asdf-vm to manage the development tools I use, including Java, Node.js, Gradle, and Maven.
+
+```sh
+brew install asdf
+```
+
+You can install the latest stable version using prefixes:
+
+```sh
+asdf plugin add java
+asdf install java latest:temurin-21
+```
+
+asdf-vm also requires some [changes](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf) to the `PATH` environment variable. Fortunately, there is also the [`asdf for oh-my-zsh` plugin](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/asdf/asdf.plugin.zsh) to help complete the setup.
+
+Note that this plugin depends on Homebrew, so when configuring plugins, you need to place `brew` before `asdf`, for example:
+
+```
+plugins=(git z history brew asdf gradle)
+```
+
+[Command completion](#command-completion) for tools installed with asdf-vm may have issues. Each command's completion configuration needs to be installed separately, and Homebrew often automatically installs completion configurations. Additionally, Oh My Zsh may also include completion configurations, such as [Gradle](https://github.com/gradle/gradle-completion).
+
+Alternatives include [SDKMAN!](https://sdkman.io).
 
 ### Java
 
-There is no default JDK any more for new version of macOS, so you need to download and install it before you want to do some Java projects.
+macOS no longer comes with a JDK by default, so you need to download a JDK for Java development. Before Homebrew Cask, we needed to download from <https://developer.apple.com/downloads/> or the Oracle website. There was also the more troublesome task of uninstalling and upgrading the JDK.
 
-Before brew-cask, we are used to download from: <https://developer.apple.com/downloads/>. But the drawback is that uninstall or upgrades take significant time.
+JDK installation files are in pkg format, which is different from `.app` uninstallation and has no automatic uninstallation method.
 
-For JDK package, which is pkg format, there is no automatic way to uninstall it.
+You can install JDK directly via `brew install openjdk@17` or `brew install --cask temurin`, but I now use [asdf-java](https://github.com/halcyon/asdf-java).
 
-But good news is brew-cask can do it for you:
+Alternatives include [jEnv](https://github.com/jenv/jenv).
 
-```sh
-brew cask install java
-```
+#### Domestic Usage
 
-If you need Java-11 or Java-6, you can get from [homebrew-cask-versions](https://github.com/Homebrew/homebrew-cask-versions)：
+Because `asdf-java` needs to access `raw.githubusercontent.com`, some commands may fail. You can run the following commands to avoid this.
 
-```sh
-brew tap homebrew/cask-versions
-brew cask install java11
-```
-
-You can install several versions of JDK in macOS, `/usr/libexec/java_home -V` will list all of them.
-
-So here is the problem, Which one is the one used by running `java` or any Java application? normally, macOS invokes the newest version of all those installed JDK versions. But you can change it by set `JAVA_HOME`:
+For Intel computers:
 
 ```sh
-$ java -version
-java version "1.8.0_60"
-Java(TM) SE Runtime Environment (build 1.8.0_60-b27)
-Java HotSpot(TM) 64-Bit Server VM (build 25.60-b23, mixed mode)
-$ JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home java -version
-java version "1.6.0_65"
-Java(TM) SE Runtime Environment (build 1.6.0_65-b14-466.1-11M4716)
-Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
+cp ~/.asdf/plugins/java/data/jdk-macosx-x86_64-ga.tsv $TMPDIR/asdf-java-$(whoami).cache/releases-macosx-x86_64.tsv
 ```
 
-You may change `JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home` into `` JAVA_HOME=`/usr/libexec/java_home -v 1.6` ``, which is more widely used.
+For Apple silicon computers:
 
+```sh
+cp ~/.asdf/plugins/java/data/jdk-macosx-aarch64-ga.tsv $TMPDIR/asdf-java-$(whoami).cache/releases-macosx-aarch64.tsv
+```
 
-Need to install JDK 8/9? Due to [Java8 not working anymore](https://github.com/Homebrew/homebrew-cask-versions/issues/7253), brew-cask does not privde those Oracle JDK any more. You can try [AdoptOpenJDK](https://github.com/AdoptOpenJDK/homebrew-openjdk) or download pkg from [Oracle](https://www.oracle.com).
+On macOS, some applications use the command `/usr/libexec/java_home` to use the JDK. For this, `asdf-java` also provides a [solution](https://github.com/halcyon/asdf-java#java_home-integration).
 
-*Some lines are missing here. As not helping a lot - fff*
+### Folk Method for Switching Java Versions
 
-### [rbenv](https://github.com/sstephenson/rbenv)
+Add the following script to your current shell configuration file: `~/.zprofile` or `~/.bash_profile`.
 
-Everyone needs a Ruby version management tool. That's rbenv, which is quite light and can be installed by brew.
+```sh
+function setjdk() {
+    export JAVA_HOME=`/usr/libexec/java_home -v $@`
+}
+```
+
+This way, we can switch versions by entering a single command:
+
+```sh
+setjdk 1.8
+```
+
+### IntelliJ IDEA
+
+IntelliJ IDEA, an essential tool for Java development. You can install the Ultimate Edition:
+
+```sh
+brew install --cask intellij-idea
+```
+
+You can also install the open-source and free Community Edition:
+
+```sh
+brew install --cask intellij-idea-ce
+```
+
+Due to [IntelliJ IDEA Moves to the Unified Distribution](https://blog.jetbrains.com/idea/2025/07/intellij-idea-unified-distribution-plan/), IDEA will unify the Ultimate and Community Editions, with the name unified as IntelliJ IDEA. Therefore, since 2025.2, you only need to install the Ultimate Edition. If you don't have a paid License, you can still use the functions corresponding to the Community Edition.
+
+IntelliJ IDEA has several built-in shortcut key schemes (Keymap). The ones I commonly use are `macOS` and `IntelliJ IDEA Classic`. The differences are:
+
+- `macOS` is more in line with commonly used macOS shortcuts
+- The `IntelliJ IDEA Classic` scheme is similar to shortcuts on other platforms
+
+Using different shortcuts in a team can affect efficiency. You can quickly switch Keymap using [View] > [Quick Switch Scheme] > [4 Keymap].
+
+Previously, I often used IDEA on both macOS and Windows platforms, so I generally used the `IntelliJ IDEA Classic` scheme. Recently, I have been using the default `macOS` scheme.
+
+You can open the shortcut reference manual from IDEA's [Help] > [Keyboard Shortcuts PDF].
+
+IntelliJ IDEA's default `Jetbrains Mono` font supports font ligatures, which is very cool. Setting method: [Settings] > [Editor] > [Font], check [Enable ligatures].
+
+### Docker
+
+Docker is often needed in development. Since Docker Desktop is no longer free, I started using [Colima](https://github.com/abiosoft/colima) and [Podman](https://zhuanlan.zhihu.com/p/22886116297).
+
+```sh
+brew install docker colima
+```
+
+### [PlantUML](https://plantuml.com/)
+
+Drawing is often required in development. Many of my colleagues use tools like draw.io to draw diagrams, but I prefer text-based formats, such as using Markdown to write documents, reveal.js for slides, and PlantUML for architecture and class diagrams. Using plain text makes it easy to compare differences, merge easily, and choose different tools more openly.
+
+I previously used [Graph-Easy](https://github.com/ironcamel/Graph-Easy), but now I use PlantUML. PlantUML has a thriving open ecosystem. The [C4 model](https://c4model.com) has been integrated into the [standard library](https://plantuml.com/stdlib).
+
+IntelliJ IDEA and [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml) both have plugin support. Visual Studio Code can also [embed PlantUML in Markdown](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml#markdown-integrating).
+
+In addition to [GraphViz](https://plantuml.com/graphviz-dot), PlantUML also supports other layout engines, including the Java-based [Smetana](https://plantuml.com/smetana02) and [Eclipse Layout Kernel / ELK](https://plantuml.com/elk). Since ELK uses broken lines to draw connections, the layout is clearer than GraphViz and Smetana, so I have been using ELK more recently.
+
+I prefer to [run locally](https://plantuml.com/server), as compared to the official service, running locally allows the use of better Chinese fonts. I use the [PlantUML PicoWeb Server](https://plantuml.com/picoweb) method, which can easily add ELK.
+
+### [rbenv](https://github.com/rbenv/rbenv)
+
+> Replaced by asdf-vm
+
+> unverified
+
+Everyone needs a Ruby version management tool. rbenv is such a lightweight tool that can be installed via Homebrew.
 
 Installation:
 
@@ -512,42 +795,47 @@ Installation:
 brew install rbenv ruby-build
 ```
 
-Then you need to enable `rbenv` plugin of Oh-My-Zsh, or you need to add `eval "$(rbenv init -)"` to `~/.zshrc` or `~/.zprofile`
+Then add `rbenv` plugin in `~/.zshrc`, otherwise you need to manually add `eval "$(rbenv init -)"` to `~/zshrc` or `~/.zprofile` files.
 
-Sometimes projects will depend on unique Ruby versions, like: `ruby-2.1.0`, you should go checkout [rbenv-aliases](https://github.com/tpope/rbenv-aliases).
+Sometimes projects depend on strange version numbers like `ruby-2.1.0`, in which case you need [rbenv-aliases](https://github.com/tpope/rbenv-aliases) to help:
 
 ```sh
 brew install rbenv-aliases
 ```
 
-Alternatives: RVM, chruby. But as RVM is unable to be installed by brew, and it also changes a bunch of files without any respect, that's why I already gave RVM up. chruby is another light weight tool, and works perfactly with Oh-My-Zsh, it seems someone is using it in production enviroment.
+Alternatives include RVM, chruby. Because RVM cannot be installed via Homebrew and modifies many files without restraint during installation, I abandoned it early. chruby is also a lightweight tool that integrates perfectly with Oh My Zsh, and I see some production environments using it.
 
-### Ruby Daily Alias
+### Ruby Common Aliases
 
-Almost every Rubyist takes `bi` as alias of `bundle install`. Oh-My-Zsh provides `builder` plugin to setup a set of alias, like `bi`, `be`. Also allow you to run `rspec` directly, without any leading `be` or `bundle exec`.
+> unverified
 
-For a detailed list please go to <https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/bundler>.
+Almost all Ruby developers will use `bi` as an alias for `bundle install`. Oh My Zsh provides the `bundler` plugin, which offers a set of aliases like `bi`, `be`. It also allows you to directly type `rspec` when running some common gems, without needing `be rspec` and so on. For specific commands included, please refer to [here](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bundler).
 
-Zsh shell has special usage for `[` and `]`, so `rake task[parameter]` will fail, you need to run it like this: `rake task\[parameter\]` or `noglob rake task[parameter]`. However Oh-My-Zsh already solves it, using the buildin rake plugin: `brake task[parameter]`.
+Zsh has special handling for the `[` and `]` symbols, so when running `rake task[parameter]`, it will report an error. You need to change it to `rake task\[parameter\]` or `noglob rake task[parameter]`. However, Oh My Zsh has already seen through all this, and the built-in rake plugin has solved this problem: `brake task[parameter]`.
 
-Be aware of that, put `rake` after `bundler` when modifying the plugin settings in `~/.zshrc`, for example:
+When adding plugins, make sure to put `rake` after `bundler`, like this:
+
 ```
 plugins=(git z sublime history rbenv bundler rake)
 ```
 
 ### Node Version Manager
 
-There are many node version management tools. In here, I recommend nodenv, which is quite light and can be installed by brew.
+> Replaced by asdf-vm
+
+> unverified
+
+There are many Node.js version management tools. Common ones include the following:
 
 * [nodenv](https://github.com/nodenv/nodenv)
 
-  This tool is the same as rbenv, you can install it like this:
+  This tool is similar to rbenv, with exactly the same commands, installation and configuration.
 
   ```
   brew install nodenv
   ```
 
-  Then you need to add the following code into `~/zshrc` or `~/.zprofile`.
+  You need to manually add the following configuration to `~/.zshrc` or `~/.zprofile` files.
 
   ```sh
   export PATH="$HOME/.nodenv/bin:$PATH"
@@ -558,16 +846,33 @@ Other tools:
 
 * [nvm](https://github.com/creationix/nvm)
 
-  This tool is the same as RVM, you can reference official doc to install it.
+  This tool is similar to RVM. You can refer to the official documentation for installation.
 
 * [n](https://github.com/tj/n)
 
-  Another simple tool, please reference official doc.
+  A simple tool, installation is similar to nvm, no additional configuration needed. Please refer to the official documentation for details.
+
+Currently, based on GitHub Stars, the ranking of these three management tools is nvm, n, nodenv. But personally, I recommend nodenv, for the same reasons as rbenv, especially for those already using rbenv, nodenv will feel more familiar :smile: .
+
+### Java [OCD]
+
+As someone with OCD, whenever I see incorrect Java capitalization, I want to correct it.
+
+When referring to the programming language, the correct capitalization for Java is first letter uppercase, rest lowercase. Other capitalizations like `JAVA`, `java` are incorrect.
+
+In some other contexts, lowercase `java` is used:
+
+- `java` command
+- Source file `Main.java`
+- Package name `java.lang`
+
+Only use `JAVA` in all-caps titles or environment variables like `JAVA_HOME`.
 
 ## References
 
-- [Hacker's Guide to Setting up Your Mac](http://lapwinglabs.com/blog/hacker-guide-to-setting-up-your-mac)
+- [Hacker's Guide to Setting up Your Mac](https://github.com/lapwinglabs/blog/blob/master/hacker-guide-to-setting-up-your-mac.md)
 - [Setting up a new (OS X) development machine](https://mattstauffer.co/blog/setting-up-a-new-os-x-development-machine-part-1-core-files-and-custom-shell)
-- [高效 MacBook 工作环境配置](http://www.xialeizhou.com/?p=71) **"Efficient MacBook working configurration", you need google translate* (no longer available)
-- [程序员如何优雅地使用 Mac？](http://www.zhihu.com/question/20873070) **"How to use Mac elegantly for programmer", you need google translate also*
+- [高效 MacBook 工作环境配置](http://www.xialeizhou.com/?p=71)（已失效）
+- [程序员如何优雅地使用 Mac？](http://www.zhihu.com/question/20873070)
 - [装点你的 Dock：外观篇](http://sspai.com/33493)
+- [6 Dock Terminal tweaks Mac users need](https://www.computerworld.com/article/3040996/6-dock-terminal-tweaks-mac-users-need.html)

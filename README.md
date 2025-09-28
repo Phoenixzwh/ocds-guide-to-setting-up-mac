@@ -358,7 +358,7 @@ brew install --cask iterm2
 
 每次打开新窗口/标签页时，默认进入`$HOME`目录，需手动切换至工作目录。若希望新窗口自动进入工作目录，可进行如下设置：
 
-选择 [Settings] > [Profiles]，选择你在使用的 Profile（默认是Default），在 [General] 标签页中的选择 [Working Directory] > [Reuse previous seesion's directory]。
+选择 [Settings] > [Profiles]，选择你在使用的 Profile（默认是Default），在 [General] 标签页中的选择 [Working Directory] > [Reuse previous session's directory]。
 
 在 iTerm2 中双击会自动选中对应的词，三击会选中对应的整行。选中的内容会自动进入剪贴板，不需要再按`Command-C`复制。
 
@@ -556,8 +556,6 @@ brew cask install sublime-text
 替代品有 Atom、TextMate、Sublime Text 2 等，跟 Sublime Text 3 一样，用 Homebrew Cask 安装的话命令行工具会被自动加入`$PATH`。
 
 ### MacDown
-
-> unverified
 
 MacDown 是 Markdown 编辑器。由于 Mou 一直不支持代码高亮，我就转向了 MacDown。完美支持 [GFM](https://help.github.com/articles/github-flavored-markdown/)。
 
@@ -768,7 +766,7 @@ IntelliJ IDEA 默认的`Jetbrains Mono`字体支持字体连笔（font ligatures
 
 ### Docker
 
-开发中经常需要用到 Docker。因为 Docker Desktop 不再免费，我开始使用 [Colima](https://github.com/abiosoft/colima)。
+开发中经常需要用到 Docker。因为 Docker Desktop 不再免费，我开始使用 [Colima](https://github.com/abiosoft/colima)和[Podman](https://zhuanlan.zhihu.com/p/22886116297)。
 
 ```sh
 brew install docker colima
