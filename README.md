@@ -62,7 +62,7 @@ PS：虽然本文名为“强迫症”，但其实并不是[真正意义上的�
 
 ### 三指拖动
 
-我习惯于三指拖动窗口。设置方法：选择 [System Settings] > Accessibility] > [Pointer Control] > [Trackpad Options]，选中 [Use trackpad for dragging]，并且选择 [Dragging style] > [Three Finger Drag]。
+我习惯于三指拖动窗口。设置方法：选择 [System Settings] > [Accessibility] > [Pointer Control] > [Trackpad Options]，选中 [Use trackpad for dragging]，并且选择 [Dragging style] > [Three Finger Drag]。
 
 设置完成后，还可以使用三指拖动的方式选择文本。
 
@@ -82,21 +82,24 @@ PS：在带 Touch Bar 的机型上，这个设置貌似没有作用。
 
 注意这个 [Save] 按钮跟其他两个按钮不太一样，它的底色是蓝的。这种按钮被称为默认按钮，除了用鼠标点击触发外，还可以通过回车键触发。
 
-那么问题来了，如果你不想保存，想点击 [Don't Save]，是不是只能用鼠标点击了呢？
+那么问题来了，如果你不想保存，想点击 [Don't Save]，是不是只能用鼠标点击了呢？其实有多种键盘操作方式：
 
-并不是这样：选择 [System Settings] > [Keyboard]，选中 [Keyboard navigation]，之后这个对话框会变成这样：
+1.  **开启全键盘控制**
+    选择 [System Settings] > [Keyboard]，选中 [Keyboard navigation]。之后这个对话框会变成这样：
+    ![dialog-box-with-all-controls](dialog-box-with-all-controls.png)
+    这时 [Don't Save] 按钮有了一圈蓝边，意味着它成为了当前焦点，可以通过`空格键`触发。你还可以用`Tab`键在各个按钮间移动焦点。
 
-![dialog-box-with-all-controls](dialog-box-with-all-controls.png)
+2.  **使用特定快捷键**
+    - `Command-Delete`：在包含“删除”或“不存储”按钮的对话框中，这个快捷键通常会直接触发该选项。
+    - `Esc`：相当于点击 [Cancel] 按钮。
 
-这个 [Don't Save] 按钮有了一圈蓝边，这个意味着你可以通过空格键触发。不仅如此，你还可以用`Tab`键把蓝边转移到其他按钮，来实现全键盘控制。
-
-除了`All controls`这个方法，你还可以用`Command-Delete`来选择 [Don't Save]。`Command-Delete`的作用是在包含“删除”或“不存储”按钮的对话框中选择“删除”或“不存储”。
+<details>
+<summary>关于 Command-D 等快捷键的探索（个人吐槽）</summary>
 
 除了上述两个办法之外，居然还有个方法！就是按`Command-D`！据说是因为按`Command-按钮的大写首字母`可以触发该按钮。可是！我按了`Command-C`和`Command-S`想取消和保存都没用！但是`Command-D`真的有用！如果仅仅是这也就算了，可是我又手贱试了下 TextEdit，在关闭未保存的文件时弹出的对话框上有三个按钮 [Delete]、[Cancel] 和 [Save]。然而`Command-D`和`Command-C`都没用，但是！`Command-S`可以保存！我完全不能理解！我整个人几乎都是崩溃的，只好以咆哮体写下这段文字。如果谁能解释请务必告诉我，必有重谢！
 
 `Command-C`不能用应该是因为它绑定到了复制功能；而`Command-D`不能用因为它的作用是从“打开”对话框或“存储”对话框中选择“桌面”文件夹。
-
-在这个对话框上，你可以用`Esc`来执行 [Cancel] 操作。
+</details>
 
 ### 输入法快捷键
 
@@ -210,7 +213,7 @@ Spotlight 的快捷键（不论是英文版还是中文版）都已经统一成�
 
 ### 创建大小写敏感的工作区
 
-> unverified
+> **注意**：本节内容来自旧版指南，近期未经验证，可能已过时。
 
 在多人合作的项目开发时，因为 Mac 文件系统默认是大小写不敏感的，所以经常会出现一些诡异的问题。创建一个大小写敏感的工作区（workspace）来解决避免这些问题：
 
@@ -324,7 +327,7 @@ export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 
 ### [Homebrew Cask](https://github.com/Homebrew/homebrew-cask)
 
-Homebrew Cask 允许你使用命令行安装 macOS 应用。比如你可以这样安装 Chrome：`brew install --cask google-chrome`。还有 Evernote `evenote`、Sublime Text `sublime-text`、VirtualBox `virtualbox`、Docker `docker`、Firefox `firefox`、Visual Studio Code `visual-studio-code` 等都可以用 Homebrew Cask 安装。
+Homebrew Cask 允许你使用命令行安装 macOS 应用。比如你可以这样安装 Chrome：`brew install --cask google-chrome`。还有 Evernote `evernote`、Sublime Text `sublime-text`、VirtualBox `virtualbox`、Docker `docker`、Firefox `firefox`、Visual Studio Code `visual-studio-code` 等都可以用 Homebrew Cask 安装。
 
 Homebrew Cask 是社区驱动的，如果你发现 Homebrew Cask 上的应用不是最新版本，或者缺少你某个应用，你可以自己提交 pull request。
 
@@ -356,7 +359,7 @@ brew install --cask iterm2
 
 选择 [Settings] > [Profiles]，选择你在使用的 Profile（默认是`Default`），在 [Keys] 标签页中把 [Left Option key:] 和 [Right Option key:] 都设置成 [Esc+]。
 
-每次打开新窗口/标签页时，默认进入`$HOME`目录，需手动切换至工作目录。若希望新窗口自动进入工作目录，可进行如下设置：
+每次打开新窗口/标签页时，默认进入`$HOME`目录。若希望新打开的标签页或窗口自动进入当前标签页所在的目录，可进行如下设置：
 
 选择 [Settings] > [Profiles]，选择你在使用的 Profile（默认是Default），在 [General] 标签页中的选择 [Working Directory] > [Reuse previous session's directory]。
 
@@ -453,25 +456,21 @@ gwip  | `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -
 
 完整列表请参考：<https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git/>。
 
-### ShiftIt
+### [历史] ShiftIt
 
-> 该工具在 macOS 12 的某次更新后就无法工作了。根据[其作者建议](https://github.com/fikovnik/ShiftIt#alternatives)，我更换成了 [Hammerspoon ShiftIt](#hammerspoon-shiftIt)。
+> **Note**: 此工具已不再维护，在较新版 macOS 12+ 上已无法工作。现推荐使用 [Hammerspoon ShiftIt](#hammerspoon-shiftit) 作为替代。
 
-原生 macOS 仅支持手动调整窗口大小，因此需要窗口管理工具。我曾尝试多种工具，但多数与现有快捷键（特别是 IntelliJ IDEA）存在冲突。ShiftIt 是少数没有冲突的窗口管理工具之一：
-
-```sh
-brew install --cask shiftit
-```
+原生 macOS 仅支持手动调整窗口大小，因此需要窗口管理工具。ShiftIt 是曾经流行的窗口管理工具之一。
 
 替代者有 SizeUp，主要快捷键和 ShiftIt 相同。
 
 当然如果喜欢 hacking，[Slate](https://github.com/jigish/slate)  是个不错的 hackable 的窗口管理工具。配置可以参照 <http://thume.ca/howto/2012/11/19/using-slate/>。
 
-近期研究了在 Homebrew 排行榜上排名较高的 [Rectangle](https://rectangleapp.com/)，发现其默认快捷键与 [IntelliJ IDEA](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf) 存在冲突。
+还有就是 [Rectangle](https://rectangleapp.com/)，它在 Homebrew 排行榜上排名较高，但需注意其默认快捷键与 [IntelliJ IDEA](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf) 存在冲突。
 
 ### [Hammerspoon ShiftIt](https://github.com/peterklijn/hammerspoon-shiftit)
 
-一个基于 [Hammerspoon](https://www.hammerspoon.org/)，模拟 Shiftit 窗口管理功能的方法。安装步骤稍显繁琐。安装方法见标题链接。
+一个基于 [Hammerspoon](https://www.hammerspoon.org/)，模拟 Shiftit 窗口管理功能的方法，是目前推荐的窗口管理方案。安装步骤稍显繁琐，具体方法见标题链接。
 
 如果 [Step 2](https://github.com/peterklijn/hammerspoon-shiftit?tab=readme-ov-file#step-2) 中的`ShiftIt spoon`无法下载，可以使用[链接](https://github.com/peterklijn/hammerspoon-shiftit/releases/download/v1.1/ShiftIt.spoon.zip)，文件是一模一样的。
 
@@ -500,26 +499,20 @@ brew tap homebrew/cask-fonts
 brew install font-open-sans
 ```
 
-### [BCLM](https://github.com/zackelia/bclm)
+### 电池充电管理
 
-我看到一个研究，说是相比于「放电到 25% 再充电，然后充电到 100%」，「放电到 45% 再充电到 75%」会让电池会有更长的寿命（健康度）。
+> **Note**: 此前推荐的 `bclm` 工具在较新的 macOS 版本上已无法使用。
 
-所以为了避免充电到 75% 以上，我会使用工具 [bclm](https://github.com/zackelia/bclm)，将充电上限限制到 50 到 100 中的任意整数。对于 Apple silicon 电脑，可以设置为 80 或 100。
+我看到一个研究，说是相比于「放电到 25% 再充电，然后充电到 100%」，「放电到 45% 再充电到 75%」会让电池会有更长的寿命（健康度）。参考[几个月电池健康掉到90%？这样充电电池寿命延长3倍（非标题党）](https://www.bilibili.com/video/BV1Ha411F7rg/?share_source=copy_web)。
+
+为了延长电池寿命，将充电上限设置为 80% 左右是一个有效方法。目前推荐使用 [batt](https://github.com/charlie0129/batt) 这个命令行工具。
 
 ```sh
-brew tap zackelia/formulae
-brew install bclm
+brew install batt
 ```
+安装后需要通过 `sudo brew services start batt` 启动服务。
 
-参考[几个月电池健康掉到90%？这样充电电池寿命延长3倍（非标题党）](https://www.bilibili.com/video/BV1Ha411F7rg/?share_source=copy_web)。
-
-最近我的 M3 Max Macbook Pro 升级到 macOS 的最新版本（14.7）后， BCLM [不能使用了](https://github.com/zackelia/bclm/issues/49)。我正在尝试使用 [batt](https://github.com/charlie0129/batt) 替代。`batt`也可以使用 Homebrew 安装。注意安装好后需要使用`sudo brew services start batt`来启动服务。
-
-### [AlDente](https://apphousekitchen.com/)
-
-AlDente 可以视为 BCLM 的加强版，它会安装一个 Helper，让电量维持在 20-100 之间的任意值，这一点比 BCLM 强大。
-
-使用过一段时候后，我发现 AlDente 会占用我的 Menu Bar，让我的刘海 MacBook Pro 的 Menu Bar 空间更加拙荆见肘。我还是喜欢命令行和开源，所以最近在尝试`batt`。
+对于喜欢图形化界面的用户，[AlDente](https://apphousekitchen.com/) 是一个功能更强大的替代品。有个槽点是，AlDente 会占用我的 Menu Bar，让我的刘海 MacBook Pro 的 Menu Bar 空间更加拙荆见肘。
 
 ### [totp-cli](https://github.com/yitsushi/totp-cli)
 
@@ -541,12 +534,12 @@ brew install --cask visual-studio-code
 
 ### Sublime Text 3
 
-> unverified
+> **注意**：本节内容来自旧版指南，近期未经验证，可能已过时。
 
 安装：
 
 ```sh
-brew cask install sublime-text
+brew install --cask sublime-text
 ```
 
 在命令行中指定使用 Sublime Text 打开某文件，是一个非常常用的功能，一般我们会按照 [OS X Command Line](https://www.sublimetext.com/docs/3/osx_command_line.html) 中所说执行 `ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl` 来增加`subl`链接。但是如果你用 Homebrew Cask 安装的话，恭喜你，你不需要运行这个命令，因为 Homebrew Cask 自动帮你做了这件事情。而且你卸载 Sublime Text 的时候 Homebrew Cask 会自动删掉这个链接。
@@ -571,7 +564,7 @@ Homebrew Cask 还会增加`macdown`命令，可以在命令行方便的使用 Ma
 
 ### Scroll Reverser
 
-> unverified
+> **注意**：本节内容来自旧版指南，近期未经验证，可能已过时。
 
 当你在浏览一个很长的网页时，你看完了当前显示的内容，想要看后续的内容，你可以在 Trackpad 上双指上滑，或者鼠标滚轮向上滚动。这是被称作“自然”的滚动方向。
 
@@ -587,7 +580,7 @@ PS：这货会让三指点击失效。
 
 ### [LastPass](https://lastpass.com)
 
-> unverified
+> **注意**：本节内容来自旧版指南，近期未经验证，可能已过时。
 
 LastPass 是管理密码的工具，支持二次验证，提供所有浏览器插件以及 Mac 桌面版本。
 
@@ -611,7 +604,7 @@ lpass show --password gmail.com -c
 
 ### [SourceTree](https://www.sourcetreeapp.com/)
 
-> unverified
+> **注意**：本节内容来自旧版指南，近期未经验证，可能已过时。
 
 SourceTree 是 Atlassian 公司出品的一款优秀的 Git 图形化客户端。如果你发现命令行无法满足你的要求，可以试试 SourceTree。
 
@@ -625,7 +618,7 @@ brew install --cask sourcetree
 
 ### [CheatSheet](http://www.mediaatelier.com/CheatSheet/)
 
-> unverified
+> **注意**：本节内容来自旧版指南，近期未经验证，可能已过时。
 
 CheatSheet 能够显示当前程序的快捷键列表，默认的快捷键是长按`Command`。
 
@@ -637,7 +630,7 @@ brew install --cask cheatsheet
 
 ### [Alfred](https://www.alfredapp.com)
 
-> unverified
+> **注意**：本节内容来自旧版指南，近期未经验证，可能已过时。
 
 Mac 用户不用鼠标键盘的必备神器，配合大量 Workflows，习惯之后可以大大减少操作时间。
 
@@ -647,9 +640,9 @@ Mac 用户不用鼠标键盘的必备神器，配合大量 Workflows，习惯之
 brew install --cask alfred
 ```
 
-### [Stow](http://www.gnu.org/software/stow/)
+### [Stow](http.www.gnu.org/software/stow/)
 
-> unverified
+> **注意**：本节内容来自旧版指南，近期未经验证，可能已过时。
 
 GNU Stow 是管理符号链接（symlink）的一个小公举。主要用于 symlink 你的 [dotfiles](http://dotfiles.github.io/) 如 Emacs、Git、fish shell/Zsh 的配置文件。安装只需要：
 
@@ -698,7 +691,7 @@ macOS 都不会自带 JDK 了，所以进行 Java 开发的话，需要下载 JD
 
 JDK 安装文件是 pkg 格式，卸载和`.app`不一样，且没有自动卸载方式。
 
-可以通过`brew install openjdk@17`或者`brew install --cask temurin`直接安装 JDK，不过我现在都改用 [asdf-java](https://github.com/halcyon/asdf-java)了。
+现在我推荐使用 [asdf-java](https://github.com/halcyon/asdf-java) 来管理 Java 版本。也可以通过 `brew install openjdk@17` 或者 `brew install --cask temurin` 直接安装 JDK。
 
 替代品有 [jEnv](https://github.com/jenv/jenv)。
 
@@ -788,7 +781,7 @@ IntelliJ IDEA、[Visual Studio Code](https://marketplace.visualstudio.com/items?
 
 > 已经使用 asdf-vm 替代
 
-> unverified
+> 未验证
 
 人人都需要一个 Ruby 版本管理工具。rbenv 就是这样一个轻量级工具，它可以通过 Homebrew 安装。
 
@@ -826,7 +819,7 @@ plugins=(git z sublime history rbenv bundler rake)
 
 > 已经使用 asdf-vm 替代
 
-> unverified
+> 未验证
 
 Node 的版本管理工具有很多，常用的会有以下几个：
 

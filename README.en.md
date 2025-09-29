@@ -79,22 +79,26 @@ When you close files in Code, you might encounter this dialog:
 
 ![dialog-box-without-all-controls](dialog-box-without-all-controls.png)
 
-Notice that the [Save] button is different from the other two, it's blue. This kind of button is called a default button, which can be triggered by clicking or by pressing Enter.
+Notice that the [Save] button is different from the other two; it's blue. This type of button is called a default button, which can be triggered by clicking or by pressing the Enter key.
 
-So, if you don't want to save and want to click [Don't Save], do you have to use the mouse?
-Not necessarily: Select [System Settings] > [Keyboard], check [Keyboard navigation], then the dialog will change to:
+So, if you don't want to save and want to click [Don't Save], do you have to use the mouse? Not necessarily. There are several keyboard-based ways:
 
-![dialog-box-with-all-controls](dialog-box-with-all-controls.png)
+1.  **Enable Full Keyboard Access**
+    Go to [System Settings] > [Keyboard] and enable [Keyboard navigation]. The dialog will then look like this:
+    ![dialog-box-with-all-controls](dialog-box-with-all-controls.png)
+    The [Don't Save] button now has a blue border, indicating it has focus. You can trigger it with the `Space` bar. You can also use the `Tab` key to move the focus between buttons.
 
-The [Don't Save] button now has a border, meaning you can trigger it with Space. Also, you can move the focus (blue border) to other buttons with Tab, enabling full keyboard control.
+2.  **Use Specific Shortcuts**
+    - `Command-Delete`: In dialogs with a "Delete" or "Don't Save" button, this shortcut will usually trigger that option directly.
+    - `Esc`: This is equivalent to clicking the [Cancel] button.
 
-Besides the All controls method, you can also use `Command-Delete` to select [Don't Save]. `Command-Delete` means to select any button that means 'delete' or 'do not save'.
+<details>
+<summary>A Personal Rant on Command-D and Other Shortcuts</summary>
 
-Besides these two methods, there's another way! Press `Command-D`! It's said that pressing `Command-<button's capital first letter>` can trigger the button. But! I tried `Command-C` and `Command-S` to cancel and save, but they didn't work! However, `Command-D` works! If that were all, it would be fine, but I also tried TextEdit, where closing an unsaved file shows a dialog with three buttons: [Delete], [Cancel], and [Save]. Yet `Command-D` and `Command-C` don't work, but `Command-S` can save! I completely don't understand! I'm almost崩溃, so I wrote this in ranting tone. If anyone can explain, please tell me, I'll reward you!
+Besides the methods above, there's another way! Press `Command-D`! It's said that pressing `Command-<button's first letter>` can trigger the button. But! I tried `Command-C` and `Command-S` to cancel and save, but they didn't work! However, `Command-D` works! If that were all, it would be fine, but I also tried TextEdit, where closing an unsaved file shows a dialog with three buttons: [Delete], [Cancel], and [Save]. Yet `Command-D` and `Command-C` don't work, but `Command-S` can save! I completely don't understand! I'm almost going crazy, so I wrote this in a ranting tone. If anyone can explain, please tell me, I'll be very grateful!
 
-`Command-C` probably doesn't work because it's bound to copy function; and `Command-D` doesn't work because its function is to select the Desktop folder in open or save dialogs.
-
-On this dialog, you can use `Esc` to perform [Cancel].
+`Command-C` probably doesn't work because it's bound to the copy function; and `Command-D` doesn't work in some cases because its function is to select the Desktop folder in "Open" or "Save" dialogs.
+</details>
 
 ### Input Method Shortcuts
 
@@ -206,7 +210,7 @@ Spotlight's shortcut (whether English or Chinese version) has been unified to `C
 
 ### Create Case-Sensitive Workspace
 
-> unverified
+> **Note**: This section is from an older version of the guide and has not been recently verified. The information may be outdated.
 
 In multi-person project development, because Mac file system is case-insensitive by default, there are often weird issues. Create a case-sensitive workspace to avoid these problems:
 
@@ -449,9 +453,9 @@ gwip  | `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -
 
 The full list is available at: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git/>.
 
-### ShiftIt
+### [Deprecated] ShiftIt
 
-> This tool stopped working after a macOS 12 update. According to [the author's suggestion](https://github.com/fikovnik/ShiftIt#alternatives), I switched to [Hammerspoon ShiftIt](#hammerspoon-shiftit).
+> **Note**: This tool is no longer maintained and does not work on macOS 12+. The recommended alternative is [Hammerspoon ShiftIt](#hammerspoon-shiftit).
 
 Native macOS only supports manually resizing windows, so a window management tool is needed. I've tried many tools, but most conflict with existing shortcuts (especially IntelliJ IDEA). ShiftIt is one of the few window management tools without conflicts:
 
@@ -496,26 +500,20 @@ brew tap homebrew/cask-fonts
 brew install font-open-sans
 ```
 
-### [BCLM](https://github.com/zackelia/bclm)
+### Battery Charging Management
 
-I saw a study that said compared to "discharging to 25% then charging to 100%", "discharging to 45% then charging to 75%" will give the battery a longer lifespan (health).
+> **Note**: The previously recommended `bclm` tool no longer works on recent versions of macOS.
 
-Therefore, to avoid charging above 75%, I use the tool [bclm](https://github.com/zackelia/bclm) to limit the charging limit to any integer between 50 and 100. For Apple silicon computers, it can be set to 80 or 100.
+To extend battery lifespan (health), a common strategy is to keep the charge level within a certain range (e.g., 45% to 75%) rather than doing full 0-100% cycles. For more details, you can refer to studies on battery health, like [this video (in Chinese)](https://www.bilibili.com/video/BV1Ha411F7rg/?share_source=copy_web).
+
+Setting the charging limit to around 80% is an effective method. The currently recommended command-line tool for this is [batt](https://github.com/charlie0129/batt).
 
 ```sh
-brew tap zackelia/formulae
-brew install bclm
+brew install batt
 ```
+After installation, you need to start the service with `sudo brew services start batt`.
 
-Reference: [Battery health dropped to 90% in a few months? This charging method extends battery life by 3 times (not clickbait)](https://www.bilibili.com/video/BV1Ha411F7rg/?share_source=copy_web).
-
-Recently, after my M3 Max MacBook Pro upgraded to the latest version of macOS (14.7), BCLM [stopped working](https://github.com/zackelia/bclm/issues/49). I am now trying to use [batt](https://github.com/charlie0129/batt) as a replacement. `batt` can also be installed using Homebrew. Note that after installation, you need to use `sudo brew services start batt` to start the service.
-
-### [AlDente](https://apphousekitchen.com/)
-
-AlDente can be seen as an enhanced version of BCLM. It installs a Helper that maintains the battery level between 20-100, which is more powerful than BCLM.
-
-After using it for a while, I found that AlDente occupies my Menu Bar, making the Menu Bar space on my notch MacBook Pro even more cramped. I still prefer command line and open source, so I am recently trying `batt`.
+For users who prefer a graphical interface, [AlDente](https://apphousekitchen.com/) is a more powerful alternative. One minor drawback is that AlDente occupies space in the Menu Bar, which can be tight on notched MacBook Pro models.
 
 ### [totp-cli](https://github.com/yitsushi/totp-cli)
 
@@ -537,7 +535,7 @@ brew install --cask visual-studio-code
 
 ### Sublime Text 3
 
-> unverified
+> **Note**: This section is from an older version of the guide and has not been recently verified. The information may be outdated.
 
 Installation:
 
@@ -567,7 +565,7 @@ Homebrew Cask will also add the `macdown` command, making it convenient to open 
 
 ### Scroll Reverser
 
-> unverified
+> **Note**: This section is from an older version of the guide and has not been recently verified. The information may be outdated.
 
 When you are browsing a long web page and have finished viewing the currently displayed content, you want to see the subsequent content. You can swipe up with two fingers on the Trackpad or scroll the mouse wheel upwards. This is called the "natural" scrolling direction.
 
@@ -583,7 +581,7 @@ PS: This will disable three-finger click.
 
 ### [LastPass](https://lastpass.com)
 
-> unverified
+> **Note**: This section is from an older version of the guide and has not been recently verified. The information may be outdated.
 
 LastPass is a password management tool that supports two-factor authentication and provides plugins for all browsers as well as a macOS desktop version.
 
@@ -607,7 +605,7 @@ lpass show --password gmail.com -c
 
 ### [SourceTree](https://www.sourcetreeapp.com/)
 
-> unverified
+> **Note**: This section is from an older version of the guide and has not been recently verified. The information may be outdated.
 
 SourceTree is an excellent Git GUI client from Atlassian. You can try it if you need more than the command line.
 
@@ -621,7 +619,7 @@ Homebrew Cask will automatically add the `stree` command-line tool to `$PATH` wh
 
 ### [CheatSheet](http://www.mediaatelier.com/CheatSheet/)
 
-> unverified
+> **Note**: This section is from an older version of the guide and has not been recently verified. The information may be outdated.
 
 CheatSheet can display a list of shortcuts for the current application. The default shortcut is to long-press `Command`.
 
@@ -633,7 +631,7 @@ brew install --cask cheatsheet
 
 ### [Alfred](https://www.alfredapp.com)
 
-> unverified
+> **Note**: This section is from an older version of the guide and has not been recently verified. The information may be outdated.
 
 Alfred is an essential tool for Mac users. Combined with numerous Workflows, it can significantly reduce operation time after getting used to it.
 
@@ -645,7 +643,7 @@ brew install --cask alfred
 
 ### [Stow](http://www.gnu.org/software/stow/)
 
-> unverified
+> **Note**: This section is from an older version of the guide and has not been recently verified. The information may be outdated.
 
 GNU Stow is a "princess" for managing symbolic links (symlinks). It is mainly used to symlink your [dotfiles](http://dotfiles.github.io/), such as Emacs, Git, fish shell/Zsh configuration files. Installation is simple:
 
